@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Ti 💖</title>
+  <title>🩵Para Ti con mucho Amor 😊</title>
+
   <style>
     body {
       margin: 0;
@@ -11,19 +12,52 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      background: url("imagen.jpg") no-repeat center center fixed;
+      background-size: cover;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow: hidden;
     }
+    
+    .contenedor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .foto {
+      width: 200px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 16px;
+      opacity: 0.90;
+      filter: brightness(0.9);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .izq { background-image: url("izquierda.jpg"); }
+    .der { background-image: url("derecha.jpg"); }
+
     .carta {
-      background: rgba(255,255,255,0.9);
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
       padding: 24px;
       border-radius: 16px;
       max-width: 420px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       text-align: center;
+      backdrop-filter: blur(4px);
     }
-    h1 { margin-top: 0; }
-    p { line-height: 1.6; font-size: 1.05rem; }
+
+    h1, h2 { color: #9bdcff; }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
     .btn {
       margin-top: 12px;
       padding: 10px 16px;
@@ -32,6 +66,17 @@
       background: #ff4d6d;
       color: white;
       font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 1000px) {
+      .foto { display: none; }
     }
   </style>
 </head>
@@ -41,18 +86,27 @@
     <source src="musica.mp3" type="audio/mpeg" />
   </audio>
 
-  <div class="carta">
-    <h1>Para ti 💕</h1>
-    <p>
-      Escribo estas palabras para recordarte lo especial que eres para mí.
-      Gracias por estar, por reír conmigo y por hacer mis días más bonitos.
-    </p>
-    <p>
-      Ojalá esta pequeña carta te saque una sonrisa hoy. ✨
-    </p>
-    <button class="btn" onclick="document.getElementById('musica').play()">
-      ▶ Reproducir música
-    </button>
+  <div class="contenedor">
+    <div class="foto izq"></div>
+
+    <div class="carta">
+      <h1>🩵 Para Ti 🩵</h1>
+      <h2>Con mucho Amor 😊</h2>
+      <p>
+        Eres la niña más tierna y hermosa que he conocido.🌛  
+        Cuando te veo se me sonroja la carita y me llenas de una alegría inexplicable.   
+        No puedo evitar pensar en todos los momentos que pasamos juntos y lo bien que la pasamos 🦇.
+        Espero que entiendas lo mucho que te amo y lo necesaria que eres en mi vida.
+      </p>
+      <p>
+        Espero que esta cartita alegre tu día. ✨
+      </p>
+      <button class="btn" onclick="document.getElementById('musica').play()">
+        ▶ Dale Play!
+      </button>
+    </div>
+
+    <div class="foto der"></div>
   </div>
 
 </body>
