@@ -12,28 +12,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: url("imagen.jpg") no-repeat center center fixed;
+      background: url("imagen.jpg") no-repeat center center;
       background-size: cover;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      overflow: hidden;
+      overflow-x: hidden;
     }
     
     .contenedor {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 16px;
+      padding: 12px;
     }
 
     .foto {
-      width: 200px;
-      height: 200px;
-      background-size: cover;
+      width: 220px;
+      height: 320px;
+      background-size: contain;   /* no recorta */
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 16px;
-      opacity: 0.90;
-      filter: brightness(0.9);
+      opacity: 0.9;
+      filter: brightness(0.95);
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
@@ -43,9 +44,10 @@
     .carta {
       background: rgba(0, 0, 0, 0.85);
       color: white;
-      padding: 24px;
+      padding: 20px;
       border-radius: 16px;
       max-width: 420px;
+      width: 100%;
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       text-align: center;
       backdrop-filter: blur(4px);
@@ -54,8 +56,8 @@
     h1, h2 { color: #9bdcff; }
 
     p {
-      line-height: 1.6;
-      font-size: 1.05rem;
+      line-height: 1.5;
+      font-size: 1rem;
     }
 
     .btn {
@@ -75,8 +77,21 @@
       opacity: 0.9;
     }
 
-    @media (max-width: 1000px) {
-      .foto { display: none; }
+    /* 📱 Ajustes para celular */
+    @media (max-width: 768px) {
+      .contenedor {
+        flex-direction: column;
+      }
+
+      .foto {
+        width: 90vw;
+        height: 40vh;
+        opacity: 0.25;        /* quedan de fondo suave */
+      }
+
+      p {
+        font-size: 0.95rem;  /* texto más pequeño para que no se rompa */
+      }
     }
   </style>
 </head>
